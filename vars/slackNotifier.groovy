@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 def notifySlack(String buildStatus = 'STARTED') {
     // Build status of null means success.
     buildStatus = buildStatus ?: 'SUCCESS'
