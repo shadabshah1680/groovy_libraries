@@ -15,13 +15,13 @@ def call(String buildStatus = 'STARTED') {
     }
 
     if (buildStatus == 'STARTED') {
-        slackSend(channel: 'custom_pipelines_alerts', message: msg.concat("") , color: '#0000FF' )
+        slackSend(channel: 'custom_pipelines_alerts', message: msg.concat("Wait") , color: '#0000FF' )
     } else if (buildStatus == 'SUCCESS') {
-        slackSend(channel: 'custom_pipelines_alerts', message: msg.concat("Successfully Updated To Desired  Count") , color: color )
+        slackSend(channel: 'custom_pipelines_alerts', message: msg.concat("Great") , color: color )
     } else if (buildStatus == 'UNSTABLE') {
-        slackSend(channel: 'custom_pipelines_alerts', message: msg.concat("Desired  Count Not Updated") , color: color )
+        slackSend(channel: 'custom_pipelines_alerts', message: msg.concat("Not Lose Hope, Please try Again") , color: color )
     } else {
-        slackSend(channel: 'custom_pipelines_alerts', message: msg.concat("Desired  Count Not Updated") , color: '#ff0000' )
+        slackSend(channel: 'custom_pipelines_alerts', message: msg.concat("Oh No") , color: '#ff0000' )
     }
 
     }
